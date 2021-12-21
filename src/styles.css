@@ -1,21 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+html, body, #root {
+    min-height: 100vh;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
 header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: #FEC601;
+    padding: 1.2rem 2.5rem;
 }
 
 @media (min-width: 768px) {
     header {
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
+        padding-right: 8rem;
+        padding-left: 8rem;
     }
 }
 
 h1 {
     text-align: center;
     color: #000;
+    font-size: 3rem;
 }
 
 a {
@@ -35,6 +58,44 @@ a {
 .navbar-toggler {
     justify-content: flex-end;
 }
+
 .navbar-toggler:focus {
     box-shadow: none;
+}
+
+.iconify--emojione {
+    font-size: 3rem;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+main {
+    flex-grow: 2;
+}
+
+footer {
+    background-color: #FEC601;
+    padding: 2rem;
+}
+
+footer p {
+    font-size: 2rem;
+    text-align: center;
+}
+
+footer p a {
+    color: #000;
+    
+}
+
+footer p a:hover {
+    color: #fff;
+    background-color: #3b3b3b;
+    padding: .5rem 1rem;
+    transition: ease .3s;
+    border-radius: 50px;
 }
