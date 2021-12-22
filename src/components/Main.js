@@ -1,4 +1,5 @@
 import ItemListContainer from "./ItemListContainer"
+import ItemCount from './ItemCount';
 
 const Main = () => {
     return (
@@ -6,6 +7,8 @@ const Main = () => {
             <h2>
                 <ItemListContainer greeting={"Te damos la bienvenida a DevShop"} />
             </h2>
+
+            <ItemCount stock={8} initial={1}/>
         </main>
     )
 }
