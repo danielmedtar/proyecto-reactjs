@@ -77,6 +77,11 @@ main {
     flex-grow: 2;
 }
 
+.titulo-cargando {
+    margin: 0 auto;
+    font-size: 4rem;
+}
+
 .container-btns {
     display: flex;
     justify-content: center;
@@ -109,6 +114,42 @@ main {
     background-color: green;
     color: #fff;
     font-weight: bold;
+}
+
+#contenedor_productos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 80px;
+}
+
+@media (min-width: 1024px) {
+    #contenedor_productos {
+        gap: 150px;
+    }
+}
+
+.card_productos { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.img-producto {
+    height: 250px;
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+.info_producto {
+    text-align: center;
+    font-size: 2rem;
+}
+.producto_descripcion {
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 footer {

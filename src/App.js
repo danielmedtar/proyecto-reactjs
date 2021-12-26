@@ -15,7 +15,7 @@ const App = () => {
         <>
             <Header/>
 
-            <Main />
+            <Main greeting={"Te damos la bienvenida a DevShop"} />
 
             <Footer data={datosFooter} />
         </>
