@@ -1,10 +1,10 @@
 import ItemListContainer from "./ItemListContainer"
 
-const Main = ({greeting}) => {
+
+const Main = (productos) => {
     return (
-        <main className="mt-5">
-            <h2>{greeting}</h2>
-                <ItemListContainer />
+        <main id="contenedor_productos" className="mt-5">
+            <ItemListContainer productos={productos} />
         </main>
     )
 }

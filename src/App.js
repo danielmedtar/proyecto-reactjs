@@ -4,8 +4,9 @@ import "./styles.css"
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
-const App = () => {
+const App = ({greeting}) => {
 
     const datosFooter = {
         copyright: "Todos los Derechos Reservados 2021",
@@ -15,7 +16,11 @@ const App = () => {
         <>
             <Header/>
 
-            <Main greeting={"Te damos la bienvenida a DevShop"} />
+            <h2 className='mt-5'>{greeting="Te damos la bienvenida a DevShop"}</h2>
+
+            <Main />
+            
+            <ItemDetailContainer />
 
             <Footer data={datosFooter} />
         </>
