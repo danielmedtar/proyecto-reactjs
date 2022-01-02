@@ -2,7 +2,7 @@ import ItemCount from "./ItemCount"
 // import ItemDetailContainer from "./ItemDetailContainer"
 
 
-const ItemDetail = (detalleProductos) => {   
+const ItemDetail = ({detalleProductos}) => {   
     
     return (
             <div className="card_productos">

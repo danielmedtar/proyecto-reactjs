@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react"
 import ItemDetail from "./ItemDetail"
 
-const detalle = [
-        {
+const detalle = {
             stock: 5, 
             id: 1, 
             nombre: "lenovo14", 
@@ -13,11 +12,10 @@ const detalle = [
             img: "/img/pc1.webp", 
             detalle: "Hermosa, práctica y duradera Notebook para todo lo que necesites."
         }
-]   
 
 const ItemDetailContainer = () => {
 
-    const [detalleProductos, setDetalleProductos] = useState([])
+    const [detalleProductos, setDetalleProductos] = useState({})
     const [loadingDetalle, setLoadingDetalle] = useState([true])
 
     useEffect(() => {
@@ -31,7 +29,7 @@ const ItemDetailContainer = () => {
             setLoadingDetalle(false)
             setDetalleProductos(detalleProductos)
         })        
-    }, [])
+    })
 
     if(loadingDetalle) {
         return (

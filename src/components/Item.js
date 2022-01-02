@@ -1,9 +1,9 @@
 // import ItemCount from "./ItemCount"
 
 
-const Item = ({ index, item }) => {
+const Item = ({ item }) => {
     return (
-                <div className="card_productos" key={index}>
+                <div className="card_productos">
                     <img className="img-producto" src={item.img} alt="producto" />
                     <div className="info_producto">
                         <p className="producto_descripcion">{item.desc}</p>
