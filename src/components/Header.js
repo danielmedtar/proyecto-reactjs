@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Nav from "./Nav"
 
 const Header = () => {
@@ -5,9 +6,9 @@ const Header = () => {
         <header>
             <Nav/>
 
-            <a href="index.html">
+            <Link to="/">
                 <h1>DevShop</h1>
-            </a>
+            </Link>
         </header>
     )
 }
