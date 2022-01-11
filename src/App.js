@@ -23,9 +23,7 @@ const App = ({greeting}) => {
                 <Routes>
                     <Route path="/" element={<ItemListContainer />} />
                     <Route path='/:id' element={<ItemListContainer />} />
-                    <Route path='/notebooks/:id' element={<ItemDetailContainer />} />
-                    <Route path='/pcs/:id' element={<ItemDetailContainer />} />
-                    <Route path='/remeras/:id' element={<ItemDetailContainer />} />
+                    <Route path='/:cat/:id' element={<ItemDetailContainer />} />
                 </Routes>
             </main>
 

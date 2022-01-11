@@ -19,12 +19,12 @@ const ItemDetailContainer = () => {
     const [detalleProductos, setDetalleProductos] = useState({})
     const [loadingDetalle, setLoadingDetalle] = useState([true])
 
-    const { id } = useParams();
+    const { id, cat } = useParams();
 
     useEffect(() => {
         setLoadingDetalle(true)
 
-        const URL = `http://localhost:8081/notebooks/${id}`;
+        const URL = `http://localhost:8081/${cat}/${id}`;
         
         const getItem = fetch(URL)
 
@@ -35,7 +35,7 @@ const ItemDetailContainer = () => {
         })
         .catch((err) => console.log(err))
         .finally(() => setLoadingDetalle(false))
-    }, [id]);
+    }, [id, cat]);
 
     //     const promesa = new Promise((res) => {
     //         setTimeout(() => {

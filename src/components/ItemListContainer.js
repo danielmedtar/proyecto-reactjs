@@ -29,13 +29,14 @@ const ItemListContainer = () => {
     useEffect(() => {
         setLoading(true);
 
-        const URL = id ? `http://localhost:8081/${id}` : 'http://localhost:8081';
+        const URL = id ? `http://localhost:8081/${id}` : 'http://localhost:8081/db';
+        
         const getProductos = fetch(URL);
-
+        
         getProductos
         .then((res) => res.json())
         .then((res) => {
-            setProductos(res);
+            setProductos(Array.from(res));
             setLoading(true);
         })
         .catch((err) => console.log(err))
