@@ -36,7 +36,12 @@ const ItemListContainer = () => {
         getProductos
         .then((res) => res.json())
         .then((res) => {
-            setProductos(Array.from(res));
+            if(id) {
+                setProductos(res);
+            } else {
+                const newArray = [ ...res.notebooks, ...res.pcs, ...res.remeras ]
+                setProductos(newArray)
+            }
             setLoading(true);
         })
         .catch((err) => console.log(err))

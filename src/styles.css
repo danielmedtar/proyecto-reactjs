@@ -133,17 +133,11 @@ main {
     gap: 80px;
 }
 
-@media (min-width: 1024px) {
-    #contenedor_productos {
-        gap: 150px;
-    }
-}
-
 .card_productos { 
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 0;
 }
 
 .img-producto {
