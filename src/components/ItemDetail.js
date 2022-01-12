@@ -1,8 +1,7 @@
-import ItemCount from "./ItemCount"
+import { Link } from "react-router-dom";
+import ItemCount from "./ItemCount";
 
-
-
-const ItemDetail = ({detalleProductos}) => {   
+const ItemDetail = ({ detalleProductos, onAdd, agregado }) => {   
     
     return (
             <div className="card_productos">
@@ -12,8 +11,12 @@ const ItemDetail = ({detalleProductos}) => {
                     <p className="producto_descripcion">{detalleProductos.desc}</p>
                     <p className="producto-precio">${detalleProductos.precio}</p>
                     <p className="producto-detalle">{detalleProductos.detalle}</p>
-
-                    <ItemCount stock={detalleProductos.stock} initial={0} />
+                    { agregado ? 
+                        <button className="irCarrito">
+                            <Link to='/carrito'>Ir al carrito</Link>        
+                        </button>
+                        
+                        : <ItemCount stock={detalleProductos.stock} initial={1} onAdd={onAdd} /> }
                 </div>
             </div>
         )    

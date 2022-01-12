@@ -100,14 +100,20 @@ main {
 .btn-cart {
     border: none;
     padding: 5px 15px;
-    border-radius: 50px;
     font-size: 1.4rem;
 }
 
-.btn-quitar {
-    background-color: red;
-    color: #fff;
+.btn-contador {
+    background-color: #fff;
+    color: #000;
     font-weight: bold;
+    border: solid 1px #3b3b3b;
+}
+
+.btn-contador:hover {
+    background-color: #3b3b3b;
+    color: #fff;
+    transition: ease .2s;
 }
 
 .btn-agregar {
@@ -120,9 +126,18 @@ main {
     background-color: #FEC601;
 }
 
+.btn-verMas:hover {
+    background-color: #3b3b3b;
+}
+
 .btn-verMas a {
     color: #3b3b3b;
     font-weight: bolder;
+}
+
+.btn-verMas:hover > a {
+    color: #FEC601;
+    transition: ease .2s;
 }
 
 #contenedor_productos {
@@ -153,6 +168,27 @@ main {
 .producto_descripcion {
     text-transform: uppercase;
     font-weight: 700;
+}
+
+.irCarrito {
+    background-color: #fff;
+    border: 1px solid #FEC601;
+    padding: 3px 15px;
+}
+
+.irCarrito:hover {
+    background-color: #3b3b3b;
+    border: none;
+    transition: ease .3s;
+}
+
+.irCarrito a {
+    color: #3b3b3b;
+}
+
+.irCarrito:hover > a {
+    color: #FEC601;
+    font-weight: bold;
 }
 
 footer {

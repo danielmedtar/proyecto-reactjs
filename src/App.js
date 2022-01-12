@@ -6,6 +6,7 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Carrito from './components/Carrito';
 
 const App = ({greeting}) => {
 
@@ -23,6 +24,7 @@ const App = ({greeting}) => {
                     <Route path="/" element={<ItemListContainer />} />
                     <Route path='/:id' element={<ItemListContainer />} />
                     <Route path='/:cat/:id' element={<ItemDetailContainer />} />
+                    <Route path='/carrito' element={<Carrito />} />
                 </Routes>
             </main>
 
