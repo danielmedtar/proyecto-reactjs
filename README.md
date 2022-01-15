@@ -15,7 +15,7 @@ Proyecto construido con ReactJS, y Bootstrap 5.0 para maquetar ciertos elementos
 - Iconify-react 3.1.0 para insertar iconos.
 - json server 0.17.0 como base de datos local de los productos hasta llegar a Firebase.
 
-##Autor:
+## Autor:
 Daniel Medina Tariba. 
 
 **Portfolio**: https://danielmedtar.github.io/
