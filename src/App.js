@@ -7,6 +7,7 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Carrito from './components/Carrito';
+import CartProvider, { contextCarrito } from './components/Context';
 
 const App = ({greeting}) => {
 
@@ -15,22 +16,24 @@ const App = ({greeting}) => {
         autor: "Daniel Medina"
     }
     return (
-        <BrowserRouter>
-            <Header/>
+        <CartProvider>
+            <BrowserRouter>
+                <Header/>
 
-            <h2 className='mt-5'>{greeting="Te damos la bienvenida a DevShop"}</h2>
-            <main id="contenedor_productos" className="mt-5">
-                <Routes>
-                    <Route path="/" element={<ItemListContainer />} />
-                    <Route path='/:id' element={<ItemListContainer />} />
-                    <Route path='/:cat/:id' element={<ItemDetailContainer />} />
-                    <Route path='/carrito' element={<Carrito />} />
-                </Routes>
-            </main>
+                <h2 className='mt-5'>{greeting="Te damos la bienvenida a DevShop"}</h2>
+                <main id="contenedor_productos" className="mt-5">
+                    <Routes>
+                        <Route path="/" element={<ItemListContainer />} />
+                        <Route path='/:id' element={<ItemListContainer />} />
+                        <Route path='/:cat/:id' element={<ItemDetailContainer />} />
+                        <Route path='/carrito' element={<Carrito />} />
+                    </Routes>
+                </main>
 
-            
-            <Footer data={datosFooter} />
-        </BrowserRouter>
+                
+                <Footer data={datosFooter} />
+            </BrowserRouter>
+        </CartProvider>
     )
 }
 

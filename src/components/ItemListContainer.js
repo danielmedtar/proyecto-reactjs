@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
+import { contextCarrito } from "./Context";
 import ItemList from "./ItemList";
 
 const ItemListContainer = () => {
@@ -8,6 +9,8 @@ const ItemListContainer = () => {
     const [loading, setLoading] = useState(false)
     
     const { id } = useParams()
+
+    const {cartArray } = useContext(contextCarrito)
 
     useEffect(() => {
         setLoading(true);
@@ -30,6 +33,8 @@ const ItemListContainer = () => {
         .catch((err) => console.log(err))
         .finally(() => setLoading(false))
     }, [id]);
+
+    
 
     return (
         <>

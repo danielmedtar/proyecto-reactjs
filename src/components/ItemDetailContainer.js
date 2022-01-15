@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
+import { contextCarrito } from "./Context";
 import ItemDetail from "./ItemDetail"
 
 const ItemDetailContainer = () => {
@@ -9,6 +10,8 @@ const ItemDetailContainer = () => {
     const [agregado, setAgregado] = useState(false);
 
     const { id, cat } = useParams();
+
+    const { addtoCart } = useContext(contextCarrito)
 
     useEffect(() => {
         setLoadingDetalle(true)
@@ -27,7 +30,7 @@ const ItemDetailContainer = () => {
     }, [id, cat]);
 
     const onAdd = (contador) => {
-        console.log(`Agregaste ${detalleProductos.desc}, cantidad: ${contador}.`);
+        addtoCart(detalleProductos, contador)
         setAgregado(true)
     }
 
