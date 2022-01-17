@@ -191,6 +191,47 @@ main {
     font-weight: bold;
 }
 
+.contador-carrito {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.ir-inicio {
+    text-decoration: none;
+    border: solid 1px #FEC601;
+    width: 40%;
+    margin: 0 auto;
+    padding: .8rem 1.5rem;
+    color: #3b3b3b;
+    font-size: 1.8rem;
+}
+
+.ir-inicio:hover {
+    background-color: #3b3b3b;
+    color: #FEC601;
+}
+
+.elementos-carrito {
+    gap: 2rem;
+    padding: .8rem 1.5rem
+}
+
+.elementos-carrito:nth-of-type(even) {
+    background-color: #FEC601;
+}
+
+.parrafo-carrito {
+    font-size: 2rem;
+}
+
+.parrafo-carrito span {
+    font-weight: bold;
+}
+
+.icon-delete {
+    font-size: 2rem;
+    cursor: pointer;
+}
 footer {
     background-color: #FEC601;
     padding: 2rem;

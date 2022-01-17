@@ -7,16 +7,20 @@ const CartProvider = ({ children }) => {
     const [cartArray, setcartArray] = useState([])
 
     const addtoCart = (detalleProductos, contador) => {
-        console.log(`Agregaste ${detalleProductos.desc}, cantidad: ${contador}.`);
-        const newObj = {
-            item: detalleProductos,
-            contador
+        if(isInCart(detalleProductos.id)) {
+            console.log("ya está el producto en el carrito");
+        } else {
+            console.log(`Agregaste ${detalleProductos.desc}, cantidad: ${contador}.`);
+            const newObj = {
+                item: detalleProductos,
+                contador
+            }
+            setcartArray([...cartArray, newObj])
         }
-        setcartArray([...cartArray, newObj])
     }
 
     const borrarItem = (id) => {
-        const actualizarCart = cartArray.filter(el => el.id !== id)
+        const actualizarCart = cartArray.filter(el => el.item.id !== id)
         setcartArray(actualizarCart)
     }
 
@@ -25,14 +29,19 @@ const CartProvider = ({ children }) => {
     }
 
     const isInCart = (id) => {
-        return cartArray.some(el => el.id === id)
+        return cartArray.some(el => el.item.id === id)
     }
+
+    const contadorProductos = () => {
+        return cartArray.reduce((accum, item) => accum = accum + item.contador, 0)
+      }
 
     const value = {
         cartArray,
         addtoCart,
         borrarItem,
-        borrarTodo
+        borrarTodo,
+        contadorProductos
     }
 
 

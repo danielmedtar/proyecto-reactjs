@@ -1,22 +1,22 @@
 {
     "notebooks": [
-        { "stock": 5, "id": 1, "nombre": "lenovo 14", "tipo": "notebooks", "marca": "lenovo", "desc": "14 Intel", "precio": 60000, "img": "./img/pc1.webp" },
-        { "stock": 2, "id": 2, "nombre": "lenovo Pad", "tipo": "notebooks", "marca": "lenovo", "desc": "IDEA PAD 3", "precio": 80000, "img": "./img/pc2.webp" },
-        { "stock": 3, "id": 3, "nombre": "lenovo P15", "tipo": "notebooks", "marca": "lenovo", "desc": "P15", "precio": 50000, "img": "./img/pc3.webp" }
+        { "stock": 5, "id": 1, "nombre": "Lenovo 14", "tipo": "notebooks", "marca": "Lenovo", "desc": "14 Intel", "precio": 60000, "img": "./img/pc1.webp" },
+        { "stock": 2, "id": 2, "nombre": "Lenovo Pad", "tipo": "notebooks", "marca": "Lenovo", "desc": "IDEA PAD 3", "precio": 80000, "img": "./img/pc2.webp" },
+        { "stock": 3, "id": 3, "nombre": "Lenovo P15", "tipo": "notebooks", "marca": "Lenovo", "desc": "P15", "precio": 50000, "img": "./img/pc3.webp" }
     ],
 
     "pcs": [
-        {"stock": 0, "id": 4, "nombre": "CX estudio", "tipo": "pcs", "marca": "cx", "desc": "ESTUDIO A3000. AMD", "precio": 120000, "img": "./img/pc4.jpg"},
-        {"stock": 0, "id": 5, "nombre": "EXO combo J7", "tipo": "pcs", "marca": "exo", "desc": "COMBO READY J7-V1345Y", "precio": 110000, "img": "./img/pc5.jpg"},
-        {"stock": 1, "id": 6, "nombre": "HP All In One", "tipo": "pcs", "marca": "hp", "desc": "All in One 20-c307la", "precio": 75000, "img": "./img/pc6.jpg"}
+        {"stock": 0, "id": 4, "nombre": "CX estudio", "tipo": "pcs", "marca": "CX", "desc": "ESTUDIO A3000. AMD", "precio": 120000, "img": "./img/pc4.jpg"},
+        {"stock": 0, "id": 5, "nombre": "EXO combo J7", "tipo": "pcs", "marca": "Exo", "desc": "COMBO READY J7-V1345Y", "precio": 110000, "img": "./img/pc5.jpg"},
+        {"stock": 1, "id": 6, "nombre": "HP All In One", "tipo": "pcs", "marca": "HP", "desc": "All in One 20-c307la", "precio": 75000, "img": "./img/pc6.jpg"}
     ],
 
     "remeras": [
-        {"stock": 10, "id": 7, "nombre": "javascript", "tipo": "remeras", "marca": "dev", "desc": "REMERA JAVASCRIPT", "precio": 3500, "img": "./img/remera1.jpg"},
-        {"stock": 6, "id": 8, "nombre": "html", "tipo": "remeras", "marca": "dev", "desc": "REMERA HTML", "precio": 2000, "img": "./img/remera2.jpg"},
-        {"stock": 0, "id": 9, "nombre": "sass", "tipo": "remeras", "marca": "dev", "desc": "REMERA SASS", "precio": 2500, "img": "./img/remera3.jpg"},
-        {"stock": 3, "id": 10, "nombre": "angular", "tipo": "remeras", "marca": "dev", "desc": "REMERA ANGULAR", "precio": 3000, "img": "./img/remera4.jpg"},
-        {"stock": 12, "id": 11, "nombre": "node", "tipo": "remeras", "marca": "dev", "desc": "REMERA NODE.JS", "precio": 1500, "img": "./img/remera5.jpg"},
-        {"stock": 15, "id": 12, "nombre": "github", "tipo": "remeras", "marca": "dev", "desc": "REMERA GITHUB", "precio": 4000, "img": "./img/remera6.jpg"}
+        {"stock": 10, "id": 7, "nombre": "javascript", "tipo": "remeras", "marca": "Dev", "desc": "REMERA JAVASCRIPT", "precio": 3500, "img": "./img/remera1.jpg"},
+        {"stock": 6, "id": 8, "nombre": "html", "tipo": "remeras", "marca": "Dev", "desc": "REMERA HTML", "precio": 2000, "img": "./img/remera2.jpg"},
+        {"stock": 0, "id": 9, "nombre": "sass", "tipo": "remeras", "marca": "Dev", "desc": "REMERA SASS", "precio": 2500, "img": "./img/remera3.jpg"},
+        {"stock": 3, "id": 10, "nombre": "angular", "tipo": "remeras", "marca": "Dev", "desc": "REMERA ANGULAR", "precio": 3000, "img": "./img/remera4.jpg"},
+        {"stock": 12, "id": 11, "nombre": "node", "tipo": "remeras", "marca": "Dev", "desc": "REMERA NODE.JS", "precio": 1500, "img": "./img/remera5.jpg"},
+        {"stock": 15, "id": 12, "nombre": "github", "tipo": "remeras", "marca": "Dev", "desc": "REMERA GITHUB", "precio": 4000, "img": "./img/remera6.jpg"}
     ]
 }

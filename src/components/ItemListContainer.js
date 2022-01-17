@@ -10,7 +10,7 @@ const ItemListContainer = () => {
     
     const { id } = useParams()
 
-    const {cartArray } = useContext(contextCarrito)
+    const { cartArray } = useContext(contextCarrito)
 
     useEffect(() => {
         setLoading(true);
