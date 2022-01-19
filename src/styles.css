@@ -212,6 +212,8 @@ main {
 }
 
 .elementos-carrito {
+    flex-direction: column;
+    width: 100vw;
     gap: 2rem;
     padding: .8rem 1.5rem
 }
@@ -220,8 +222,14 @@ main {
     background-color: #FEC601;
 }
 
+@media (min-width: 992px) {
+    .elementos-carrito {
+        flex-direction: row;
+    }
+}
+
 .parrafo-carrito {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .parrafo-carrito span {

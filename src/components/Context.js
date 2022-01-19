@@ -8,7 +8,9 @@ const CartProvider = ({ children }) => {
 
     const addtoCart = (detalleProductos, contador) => {
         if(isInCart(detalleProductos.id)) {
-            console.log("ya está el producto en el carrito");
+            const actualizarItem = cartArray.findIndex(element => element.item.id === detalleProductos.id)
+            cartArray[actualizarItem].contador = cartArray[actualizarItem].contador + contador
+            setcartArray([...cartArray])
         } else {
             console.log(`Agregaste ${detalleProductos.desc}, cantidad: ${contador}.`);
             const newObj = {
