@@ -1,37 +1,49 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
+import { db, } from "../firebase";
 import { contextCarrito } from "./Context";
 import ItemList from "./ItemList";
+import { collection , getDocs , query , where } from "firebase/firestore"
 
 const ItemListContainer = () => {
-
+    
     const [productos, setProductos] = useState([])
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     
     const { id } = useParams()
 
     const { cartArray } = useContext(contextCarrito)
 
     useEffect(() => {
-        setLoading(true);
+        if(id) {
+            const coleccionProductos = collection(db, "productos")
+            const filtro1 = where("tipo","==",id)
+            
+            const consulta = query(coleccionProductos,filtro1)
+    
+            const pedido = getDocs(consulta)
+    
+            pedido
+                .then((resultado) =>{
+                    setProductos(resultado.docs.map(doc=>({id : doc.id,...doc.data()})))
+                    setLoading(false) 
+                        })
+                    .catch((error)=>{
+                        console.log(error);
+                    })
+        } else {
+            const coleccionProductos = collection(db, "productos")
+            const pedido = getDocs(coleccionProductos)
+            pedido
+                .then((resultado)=>{
+                    setProductos(resultado.docs.map(doc=>({id : doc.id,...doc.data()})))
+                    setLoading(false) 
+                })
+                .catch((error)=>{
+                    console.log(error)
+                })
 
-        const URL = id ? `http://localhost:8081/${id}` : 'http://localhost:8081/db';
-        
-        const getProductos = fetch(URL);
-        
-        getProductos
-        .then((res) => res.json())
-        .then((res) => {
-            if(id) {
-                setProductos(res);
-            } else {
-                const newArray = [ ...res.notebooks, ...res.pcs, ...res.remeras ]
-                setProductos(newArray)
-            }
-            setLoading(true);
-        })
-        .catch((err) => console.log(err))
-        .finally(() => setLoading(false))
+        }
     }, [id]);
 
     

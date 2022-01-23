@@ -1,10 +1,11 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 
 export const contextCarrito = createContext()
 
 const CartProvider = ({ children }) => {
 
     const [cartArray, setcartArray] = useState([])
+    const [cantidadTotal, setCantidadTotal] = useState(0)
 
     const addtoCart = (detalleProductos, contador) => {
         if(isInCart(detalleProductos.id)) {
@@ -34,16 +35,35 @@ const CartProvider = ({ children }) => {
         return cartArray.some(el => el.item.id === id)
     }
 
+    useEffect(() => {
+        if(cartArray.length > 0){
+            let cantidad = 0
+            cartArray.forEach(item => cantidad = cantidad + item.contador)
+            setCantidadTotal(cantidad)
+        }else{
+            setCantidadTotal(0)
+        }
+
+
+    },[cartArray])
+
+
     const contadorProductos = () => {
         return cartArray.reduce((accum, item) => accum = accum + item.contador, 0)
       }
 
+      const precioTotal = () => {
+        return cartArray.reduce((accum, el) => accum = accum + (el.item.precio*el.count), 0)
+    }
+
     const value = {
         cartArray,
+        cantidadTotal,
         addtoCart,
         borrarItem,
         borrarTodo,
-        contadorProductos
+        contadorProductos,
+        precioTotal
     }
 
 

@@ -8,10 +8,13 @@ const CartItem = ( { productos, borrarItem } ) => {
             
             <p className='parrafo-carrito mb-0'><span>Cantidad:</span> { productos.contador }</p>                
             
-            <p className='parrafo-carrito mb-0'><span>Precio:</span> ${ productos.item.precio }</p>                   
+            <p className='parrafo-carrito mb-0'><span>Precio Individual:</span> ${ productos.item.precio }</p>                   
+            
+            <p className='parrafo-carrito mb-0'><span>Precio Cantidad:</span> ${ productos.item.precio*(productos.contador) }</p>                                   
             
             <Icon icon="ep:delete" color="red" className='icon-delete' onClick={() => borrarItem(productos.item.id)}/>                
         </div>
+        
     )
 }
 
