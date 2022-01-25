@@ -11,9 +11,11 @@ Proyecto construido con ReactJS, y Bootstrap 5.0 para maquetar ciertos elementos
 
 ## Dependencias:
 - React Router Dom 6.2.1 para navegación.
+- Firebase a modo de base de datos de productos.
+- Toastify para mensajes al usuario.
 - Bootstrap 5.1.3 obtenido a través de instalación con npm.
 - Iconify-react 3.1.0 para insertar iconos.
-- json server 0.17.0 como base de datos local de los productos hasta llegar a Firebase.
+- .
 
 ## Autor:
 Daniel Medina Tariba. 

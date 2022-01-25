@@ -7,7 +7,7 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Carrito from './components/Carrito';
-import CartProvider, { contextCarrito } from './components/Context';
+import CartProvider from './components/Context';
 
 const App = ({greeting}) => {
 

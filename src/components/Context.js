@@ -43,8 +43,6 @@ const CartProvider = ({ children }) => {
         }else{
             setCantidadTotal(0)
         }
-
-
     },[cartArray])
 
 
@@ -53,7 +51,7 @@ const CartProvider = ({ children }) => {
       }
 
       const precioTotal = () => {
-        return cartArray.reduce((accum, el) => accum = accum + (el.item.precio*el.count), 0)
+        return cartArray.reduce((accum, el) => accum = accum + (el.item.precio*el.contador), 0)
     }
 
     const value = {

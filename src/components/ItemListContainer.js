@@ -1,9 +1,9 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { db, } from "../firebase";
-import { contextCarrito } from "./Context";
 import ItemList from "./ItemList";
 import { collection , getDocs , query , where } from "firebase/firestore"
+import  Loader from "./Loader";
 
 const ItemListContainer = () => {
     
@@ -12,45 +12,33 @@ const ItemListContainer = () => {
     
     const { id } = useParams()
 
-    const { cartArray } = useContext(contextCarrito)
-
     useEffect(() => {
+        const coleccionProductos = collection(db, "productos")
+        let pedido
         if(id) {
-            const coleccionProductos = collection(db, "productos")
-            const filtro1 = where("tipo","==",id)
-            
-            const consulta = query(coleccionProductos,filtro1)
+            const filtro1 = where("tipo","==",id)            
+            const consulta = query(coleccionProductos,filtro1)    
+            pedido = getDocs(consulta)
     
-            const pedido = getDocs(consulta)
-    
-            pedido
-                .then((resultado) =>{
-                    setProductos(resultado.docs.map(doc=>({id : doc.id,...doc.data()})))
-                    setLoading(false) 
-                        })
-                    .catch((error)=>{
-                        console.log(error);
-                    })
         } else {
-            const coleccionProductos = collection(db, "productos")
-            const pedido = getDocs(coleccionProductos)
-            pedido
-                .then((resultado)=>{
-                    setProductos(resultado.docs.map(doc=>({id : doc.id,...doc.data()})))
-                    setLoading(false) 
-                })
-                .catch((error)=>{
-                    console.log(error)
-                })
-
+            
+            pedido = getDocs(coleccionProductos)
         }
+        pedido
+            .then((resultado) =>{
+                setProductos(resultado.docs.map(doc=>({id : doc.id,...doc.data()})))
+                setLoading(false) 
+                    })
+                .catch((error)=>{
+                    console.log(error);
+                })
     }, [id]);
 
     
 
     return (
         <>
-            {loading ? <h3 className="titulo-cargando mt-5">Cargando...</h3> : <ItemList productos={productos} />}
+            {loading ? <Loader /> : <ItemList productos={productos} />}
         </>
     )
 }

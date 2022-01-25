@@ -211,6 +211,19 @@ main {
     color: #FEC601;
 }
 
+.finalizar-compra {
+    border: solid 1px #FEC601;
+    background-color: #fff;
+    color: #3b3b3b;
+    padding: .8rem 1.5rem;
+    font-size: 1.8rem;
+}
+
+.finalizar-compra:hover {
+    background-color: #3b3b3b;
+    color: #FEC601;
+}
+
 .elementos-carrito {
     flex-direction: column;
     width: 100vw;
@@ -240,6 +253,13 @@ main {
     font-size: 2rem;
     cursor: pointer;
 }
+
+.container-detalle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 footer {
     background-color: #FEC601;
     padding: 2rem;
@@ -261,4 +281,26 @@ footer p a:hover {
     padding: .5rem 1rem;
     transition: ease .3s;
     border-radius: 50px;
+}
+
+.Loader {
+    color: #fff;
+    font-family: Consolas, Menlo, Monaco, monospace;
+    font-weight: bold;
+    font-size: 78px;
+    opacity: 0.8;
+    color: #3b3b3b;
+}
+
+.Loader:before {
+    content: "<DevShop />";
+    display: inline-block;
+    animation: pulse 0.4s alternate infinite ease-in-out;
+}
+    
+@keyframes pulse {
+to {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
 }
