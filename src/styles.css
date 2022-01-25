@@ -287,9 +287,15 @@ footer p a:hover {
     color: #fff;
     font-family: Consolas, Menlo, Monaco, monospace;
     font-weight: bold;
-    font-size: 78px;
+    font-size: 4rem;
     opacity: 0.8;
     color: #3b3b3b;
+}
+
+@media (min-width: 992px) {
+    .Loader {
+        font-size: 7rem;
+    }
 }
 
 .Loader:before {

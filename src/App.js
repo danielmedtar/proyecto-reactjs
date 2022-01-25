@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Carrito from './components/Carrito';
 import CartProvider from './components/Context';
+import { ToastContainer } from 'react-toastify';
 
 const App = ({greeting}) => {
 
@@ -32,6 +33,7 @@ const App = ({greeting}) => {
 
                 
                 <Footer data={datosFooter} />
+                <ToastContainer autoClose={2000}/>
             </BrowserRouter>
         </CartProvider>
     )

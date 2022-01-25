@@ -8,15 +8,15 @@ import TotalCompra from "./TotalCompra";
 
 const CarritoContainer = () => {
 
-    const { cartArray, borrarItem, precioTotal } = useContext(contextCarrito)
+    const { cartArray, borrarItem, borrarTodo, precioTotal } = useContext(contextCarrito)
     const [orden, setOrden] = useState(false)
+    
     const crearOrden = () => {
 
         const coleccionProductos = collection(db,"ordenes")
         const usuario = {
-            nombre: "Juan",
-            email: "mail@gmail.com",
-            telefono: "01168697258"
+            nombre: "Usuario",
+            email: "mail@gmail.com"
         }
 
         const orden = {
@@ -31,14 +31,8 @@ const CarritoContainer = () => {
         pedido
         .then((resultado)=>{
             setOrden(resultado.id)
-            return (
-                'N° de Orden ' + (resultado.id),
-                `
-                El total de tu compra es $${orden.total}.
-                ¡Gracias por tu compra ${orden.usuario.nombre}, volvé pronto!
-                `,
-                'success'
-            )
+            alert("Gracias " + usuario.nombre + ". Tu Orden ha sido confirmada. El código de seguimiento: " + resultado.id + " se te ha enviado a " + usuario.email)
+            borrarTodo()
         })
         .catch((error)=>{
             console.log(error)
@@ -64,6 +58,7 @@ const CarritoContainer = () => {
                     <button className='d-flex justify-content-center finalizar-compra w-10 mx-auto' onClick={crearOrden}>
                         Finalizar Compra
                     </button>
+                    {/* {orden && <p>Orden : {orden}</p>} */}
                 </>
             }
         </div>
