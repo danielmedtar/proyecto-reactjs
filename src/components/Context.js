@@ -13,7 +13,6 @@ const CartProvider = ({ children }) => {
             cartArray[actualizarItem].contador = cartArray[actualizarItem].contador + contador
             setcartArray([...cartArray])
         } else {
-            console.log(`Agregaste ${detalleProductos.desc}, cantidad: ${contador}.`);
             const newObj = {
                 item: detalleProductos,
                 contador
