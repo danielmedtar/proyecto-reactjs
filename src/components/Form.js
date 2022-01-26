@@ -26,7 +26,7 @@ const Form = () => {
         const coleccionProductos = collection(db,"ordenes")
 
         if(usuario.nombre === "" || usuario.mail === "") {
-            alert("Completa todos los campos")
+            alert("Completa todos los campos correctamente")
         } else {
             orden = {
                 cartArray,
@@ -49,10 +49,11 @@ const Form = () => {
     }
 
     return (
-        <div className='formulario'>
-            <h3 className='text-center'>Ingresa tus Datos</h3>
+        <div className='formulario mt-5'>
+            <h3 className='text-center'>Para continuar tu compra, ingresa tus datos</h3>
             <input type='text' onChange={handleChangeNombre} placeholder='Nombre y apellido' />
             <input type='email' onChange={handleChangeMail} placeholder='Mail' />
+            <textarea placeholder='Dejanos un mensaje o aclaración'></textarea>
             <button className='d-flex justify-content-center finalizar-compra w-10 mx-auto' onClick={crearOrden}>
                     Finalizar Compra
             </button>

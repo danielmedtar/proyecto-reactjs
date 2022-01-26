@@ -7,7 +7,7 @@ import Form from './Form';
 
 const CarritoContainer = () => {
 
-    const { cartArray, borrarItem } = useContext(contextCarrito)
+    const { cartArray, borrarItem, borrarTodo } = useContext(contextCarrito)
 
     return (        
         <div>
@@ -22,6 +22,9 @@ const CarritoContainer = () => {
                     <div>
                         {cartArray.map(prod => <CartItem key={prod.item.id} productos={prod} borrarItem={borrarItem} /> )}
                         <TotalCompra/>
+                        <button className='d-flex justify-content-center vaciar w-10 mx-auto' onClick={borrarTodo}>
+                            Vaciar carrito
+                        </button>
                     </div>
 
                     <Form />

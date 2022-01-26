@@ -212,21 +212,17 @@ main {
 }
 
 .finalizar-compra {
-    border: solid 1px #FEC601;
-    background-color: #fff;
-    color: #3b3b3b;
+    border: none;
+    background-color: green;
+    color: #fff;
+    font-weight: bold;
     padding: .8rem 1.5rem;
     font-size: 1.8rem;
 }
 
-.finalizar-compra:hover {
-    background-color: #3b3b3b;
-    color: #FEC601;
-}
-
 .elementos-carrito {
     flex-direction: column;
-    width: 100vw;
+    width: 90vw;
     gap: 2rem;
     padding: .8rem 1.5rem
 }
@@ -324,9 +320,28 @@ to {
     font-size: 2rem;
 }
 
-.formulario input {
+.formulario input, textarea {
     border: none;
     border-bottom: solid 1px #3b3b3b;
-    width: 30%;
+    width: 80%;
     outline: none;
+}
+
+textarea {
+    height: 15rem;
+}
+
+@media (min-width: 992px) {
+    .formulario input, textarea {
+        width: 30%;
+    }
+}
+
+.vaciar {
+    border: none;
+    background-color: red;
+    color: #fff;
+    font-weight: bold;
+    padding: .2rem 1.5rem;
+    font-size: 1.8rem;
 }
